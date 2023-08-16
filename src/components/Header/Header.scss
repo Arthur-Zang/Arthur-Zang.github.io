@@ -1,0 +1,137 @@
+header {
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 12px 30px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1;
+
+        @media (max-width: 450px) {
+            flex: none;
+            margin-right: 10px;
+
+            img {
+                height: 24px;
+            }
+
+            h1 {
+                font-size: 16px;
+            }
+        }
+    
+        img {
+            height: 30px;
+        }
+
+        h1 {
+            font-size: 20px;
+
+            i {
+                background: linear-gradient(#fff9ed, #ff7b64);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+    }
+
+    nav {
+        flex: 1;
+
+        ul {
+            position: relative;
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap:32px;
+            padding: 9px 20px;
+
+            @media (max-width: 450px) {
+                gap: 0;
+                padding: 0;
+                justify-content: center;
+                margin-right: 10%;
+            }
+
+            li {
+                font-size: 22px;
+                color: #4d4d4e;
+                display: inline-block;  
+                position: relative;
+                margin-right: 45px;
+                vertical-align: middle;
+                text-decoration: none;
+                font-family: 'Orbitron', sans-serif;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+
+                &:hover {
+                    color: #ff5047;
+            
+                    svg {
+                      opacity: 0;
+                    }
+            
+                    &:after {
+                      opacity: 1;
+                    }
+                  }
+            
+                  &:after {
+                    content:'';
+                    font-size: 10px;
+                    letter-spacing: 2px;
+                    position: absolute;
+                    bottom: 7px;
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    opacity: 0;
+                    -webkit-transition: all 0.3s ease-out;
+                    transition: all 0.3s ease-out;
+                  }
+            
+                  &:first-child {
+                    &:after {
+                      content: 'HOME';
+                    }
+                  }
+            }
+            li.about-link {
+                &:after {
+                  content: 'ABOUT';
+                }
+            }
+          
+            li.contact-link {
+                &:after {
+                    content: 'CONTACT';
+                }
+            }
+        
+            li.project-link {
+                &:after {
+                    content: 'PROJECTS';
+                }
+            }
+        
+            li.active {
+            svg {
+                color: #ff5047;
+            }
+            }
+        }
+    }
+}
